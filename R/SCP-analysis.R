@@ -2773,7 +2773,7 @@ RunEnrichment <- function(srt = NULL, group_by = NULL, test.use = "wilcox", DE_t
                           db = "GO_BP", db_update = FALSE, db_version = "latest", convert_species = FALSE, Ensembl_version = 103, mirror = NULL,
                           TERM2GENE = NULL, TERM2NAME = NULL, minGSSize = 10, maxGSSize = 500, universe = NULL,
                           GO_simplify = TRUE, GO_simplify_padjustCutoff = 0.2, simplify_method = "Rel", simplify_similarityCutoff = 0.7,
-                          BPPARAM = BiocParallel::SnowParam(), progressbar = TRUE) {#changing bpparam() to SnowParam()
+                          BPPARAM = BiocParallel::bpparam(), progressbar = FALSE) {
   if ("progressbar" %in% names(BPPARAM)) {
     BPPARAM[["progressbar"]] <- progressbar
   }
